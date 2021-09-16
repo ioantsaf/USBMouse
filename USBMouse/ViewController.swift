@@ -37,11 +37,11 @@ class ViewController: NSViewController, USBMouseDelegate {
 
         pedalSpeedSlider.doubleValue = 0.0
 
-        popUpButton1.selectItem(at: USBMouseCharacter.allValues.index(of: .F)!)
-        popUpButton2.selectItem(at: USBMouseCharacter.allValues.index(of: .E)!)
-        popUpButton3.selectItem(at: USBMouseCharacter.allValues.index(of: .E)!)
-        popUpButton4.selectItem(at: USBMouseCharacter.allValues.index(of: .L)!)
-        popUpButton5.selectItem(at: USBMouseCharacter.allValues.index(of: .Numeral5)!)
+        popUpButton1.selectItem(at: USBMouseCharacter.allValues.firstIndex(of: .F)!)
+        popUpButton2.selectItem(at: USBMouseCharacter.allValues.firstIndex(of: .E)!)
+        popUpButton3.selectItem(at: USBMouseCharacter.allValues.firstIndex(of: .E)!)
+        popUpButton4.selectItem(at: USBMouseCharacter.allValues.firstIndex(of: .L)!)
+        popUpButton5.selectItem(at: USBMouseCharacter.allValues.firstIndex(of: .Numeral5)!)
     }
 
     @IBAction func updateLCD(sender: AnyObject) {

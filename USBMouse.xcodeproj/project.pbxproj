@@ -110,7 +110,7 @@
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = X66C7PQ4UW;
 						DevelopmentTeamName = "Joshua May";
-						LastSwiftMigration = 1010;
+						LastSwiftMigration = 1240;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -120,6 +120,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -272,7 +273,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "USBMouse/USBMouse-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -289,7 +290,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "USBMouse/USBMouse-Bridging-Header.h";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
