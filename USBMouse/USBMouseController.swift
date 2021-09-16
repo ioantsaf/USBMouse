@@ -52,22 +52,22 @@ enum USBMouseCharacter: UInt32, CustomStringConvertible {
 
     var description : String {
         switch self {
-        case Numeral0: return "0"
-        case Numeral1: return "1"
-        case Numeral2: return "2"
-        case Numeral3: return "3"
-        case Numeral4: return "4"
-        case Numeral5: return "5"
-        case Numeral6: return "6"
-        case Numeral7: return "7"
-        case Numeral8: return "8"
-        case Numeral9: return "9"
-        case Space: return "[space]"
-        case F: return "F"
-        case L: return "L"
-        case B: return "b"
-        case A: return "A"
-        case E: return "E"
+        case USBMouseCharacter.Numeral0: return "0"
+        case USBMouseCharacter.Numeral1: return "1"
+        case USBMouseCharacter.Numeral2: return "2"
+        case USBMouseCharacter.Numeral3: return "3"
+        case USBMouseCharacter.Numeral4: return "4"
+        case USBMouseCharacter.Numeral5: return "5"
+        case USBMouseCharacter.Numeral6: return "6"
+        case USBMouseCharacter.Numeral7: return "7"
+        case USBMouseCharacter.Numeral8: return "8"
+        case USBMouseCharacter.Numeral9: return "9"
+        case USBMouseCharacter.Space: return "[space]"
+        case USBMouseCharacter.F: return "F"
+        case USBMouseCharacter.L: return "L"
+        case USBMouseCharacter.B: return "b"
+        case USBMouseCharacter.A: return "A"
+        case USBMouseCharacter.E: return "E"
         }
     }
 }
@@ -86,14 +86,12 @@ class USBMouseController {
     init(delegate: USBMouseDelegate) {
         self.delegate = delegate
 
-        let p: UnsafeMutablePointer<Void> = UnsafeMutablePointer(
-            OpaquePointer(
-                bitPattern : Unmanaged.passUnretained(self)
-            )
+        let p: UnsafeMutableRawPointer = UnsafeMutableRawPointer(
+            Unmanaged.passUnretained(self).toOpaque()
         )
 
         USBMouseIOInit({
-                let _self = Unmanaged<USBMouseController>.fromOpaque(OpaquePointer($0!)).takeUnretainedValue()
+                let _self = Unmanaged<USBMouseController>.fromOpaque($0!).takeUnretainedValue()
                 _self.delegate.notifyUp()
                 USBMouseIOHandshake()
             }, p)
